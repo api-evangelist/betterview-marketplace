@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://betterview.readme.io/docs/authentication
+docs: https://betterview.readme.io/docs/authentication
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  api_key_in: []
+  oauth2_flows: []
+  notes: >-
+    Betterview's API is authenticated with a bearer token. Per the published
+    authentication guide, developers follow an authentication workflow to
+    retrieve a bearer token, which is then presented on subsequent API requests
+    to the Property Intelligence API. No OpenAPI/Swagger definition was
+    discoverable on the ReadMe-hosted developer portal, so this profile is
+    grounded in the documented auth workflow rather than a machine-readable
+    securityScheme.
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: >-
+    Bearer token obtained via Betterview's documented authentication workflow;
+    sent in the HTTP Authorization header on API requests.
+  sources:
+  - https://betterview.readme.io/docs/authentication

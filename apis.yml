@@ -1,8 +1,30 @@
 aid: betterview-marketplace
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/betterview-marketplace.png
 name: BetterView Marketplace
-description: BetterView Marketplace is a company surfaced as a portfolio company of 500-global and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Betterview is a market-leading Property Intelligence platform that delivers
+  actionable insights to property & casualty insurance underwriters, agents, and
+  insureds to increase efficiency and profitability. Its API lets carriers order
+  and retrieve property profiles enriched with the Roof Spotlight Index (RSI),
+  peril risks, flags, and third-party Partner Connect data, subscribe properties
+  to PropertyPulse monitoring, and query PropertyNow pre-processed datasets by
+  address or coordinates. Betterview integrates with core insurance systems
+  including Guidewire (a Marketplace accelerator for PolicyCenter 10), Duck
+  Creek, and Socotra, and supports SSO, Secure FTP, ImageRight drop, an
+  embeddable geospatial iframe UI, and an External Data Warehouse (EDW) SQL
+  connection.
 url: https://raw.githubusercontent.com/api-evangelist/betterview-marketplace/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +34,36 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Property Intelligence
+- Insurance
+- Insurtech
+- Geospatial
+- Underwriting
+- Property Data
+- Risk
+apis:
+- name: Betterview Property Intelligence API
+  description: >-
+    Order and retrieve property profiles (RSI, peril risks, flags, Partner
+    Connect), manage PropertyPulse monitoring, and query PropertyNow datasets by
+    address or coordinates. Bearer-token authenticated; asynchronous callback
+    delivery is the provider-recommended pattern.
+  humanURL: https://dev.betterview.com/reference
+  baseURL: https://api.betterview.com
+  properties:
+  - type: APIReference
+    url: https://dev.betterview.com/reference
+  - type: Documentation
+    url: https://dev.betterview.com/docs
+  - type: GettingStarted
+    url: https://dev.betterview.com/docs/getting-started
+  - type: Authentication
+    url: authentication/betterview-marketplace-authentication.yml
+  - type: Conventions
+    url: conventions/betterview-marketplace-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +72,30 @@ maintainers:
 common:
 - type: Website
   url: https://betterview.com
+- type: DeveloperPortal
+  url: https://dev.betterview.com/
+- type: Documentation
+  url: https://dev.betterview.com/docs
+- type: APIReference
+  url: https://dev.betterview.com/reference
+- type: GettingStarted
+  url: https://dev.betterview.com/docs/getting-started
+- type: Support
+  url: https://dev.betterview.com/discuss
+- type: Authentication
+  url: authentication/betterview-marketplace-authentication.yml
+- type: Conventions
+  url: conventions/betterview-marketplace-conventions.yml
+- type: LLMsTxt
+  url: llms/betterview-marketplace-llms.txt
+- type: MCPServer
+  url: mcp/betterview-marketplace-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/betterview-marketplace-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

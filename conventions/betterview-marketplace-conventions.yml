@@ -1,0 +1,51 @@
+generated: '2026-07-18'
+method: searched
+source: https://betterview.readme.io/llms.txt
+docs: https://dev.betterview.com/docs
+summary: >-
+  Cross-cutting request/response semantics for the Betterview Property
+  Intelligence API, captured from the published ReadMe developer portal
+  (dev.betterview.com / betterview.readme.io). No machine-readable OpenAPI was
+  discoverable, so fields below are grounded in the documented guides and API
+  reference; unknown conventions are left null rather than inferred.
+authentication:
+  style: bearer-token
+  docs: https://betterview.readme.io/docs/authentication
+  ref: authentication/betterview-marketplace-authentication.yml
+rate_limiting:
+  documented: true
+  docs: https://betterview.readme.io/docs/ratelimiting
+  notes: >-
+    The API publishes a dedicated rate-limits guide describing how limits work
+    and how developers can work with them. Exact numeric limits and the
+    response headers used to signal them were not captured (docs behind a
+    portal bot challenge to raw fetch).
+async_delivery:
+  pattern: callback
+  notes: >-
+    Betterview prefers asynchronous delivery: profile orders (Run Profile(s))
+    accept a callback path and Betterview pushes final results when scoring
+    completes, rather than requiring on-demand pulls. On-demand pull endpoints
+    exist for backwards compatibility but are discouraged by the provider.
+  operations:
+  - addprofilerequest
+  - pullprofilerecord
+  - pullfullprofilerecord
+idempotency:
+  supported: null
+  notes: No idempotency-key contract is documented in the available reference.
+pagination:
+  style: null
+  notes: >-
+    Recent-orders and date-range endpoints use start/end query-string
+    parameters bounded to a 90-day window; no cursor/offset pagination envelope
+    is documented.
+quota:
+  notes: >-
+    A quota endpoint (get_api-properties-quota) returns remaining quota credits
+    or 'unlimited'.
+error_envelope:
+  shape: null
+  notes: Error/response envelope not documented in the available reference.
+versioning:
+  scheme: null

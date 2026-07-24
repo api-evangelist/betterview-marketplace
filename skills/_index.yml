@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: generated
+source: https://betterview.readme.io/llms.txt
+skills:
+- file: betterview-marketplace-order-property-profile.md
+  name: Order and retrieve a Betterview property profile
+  api: https://dev.betterview.com/reference
+  operations:
+  - getproductsrequest-1
+  - addprofilerequest
+  - get_api-properties-bulk-status-id
+  - get_api-properties-recent
+  - pullfullprofilerecord
+  - get_api-properties-quota

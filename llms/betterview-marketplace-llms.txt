@@ -1,0 +1,34 @@
+# Betterview Documentation
+
+> API documentation for Betterivew, the market-leading Property Intelligence platform delivers actionable insights to underwriters, agents, and insureds increasing efficiency and profitability.
+
+## Guides
+- [Integrating with Betterview](https://betterview.readme.io/docs/welcome.md): Discusses the different integration paths that can be established with Betterview.
+- [Getting Started with Betterview's API](https://betterview.readme.io/docs/getting-started.md): This guide discusses the different Betterview products and the general workflow for setting up an API connection.
+- [Authentication](https://betterview.readme.io/docs/authentication.md): Discusses the workflow of authenticating and retrieving a bearer token in order to use Betterview's API.
+- [Rate Limits](https://betterview.readme.io/docs/ratelimiting.md): Explains how rate limits work within the API and how developers can use them to their advantage.
+- [Guidewire Accelerator](https://betterview.readme.io/docs/guidewire.md): Betterview is a part of the Guidewire Marketplace with an accelerator for PolicyCenter 10
+- [Duck Creek](https://betterview.readme.io/docs/duck-creek.md): Betterview's integration with Duck Creek is nearly complete!
+- [Socotra](https://betterview.readme.io/docs/socotra.md): Betterview is Integrated with Socotra!
+- [External Data Warehouse](https://betterview.readme.io/docs/edw.md): Connect directly to your data with SQL using Betterview's External Data Warehouse
+- [Single Sign On](https://betterview.readme.io/docs/sso.md): Connect your SSO identify provider to Betterview.
+- [Secure FTP](https://betterview.readme.io/docs/ftp.md): Connect to Betterview using Secure FTP
+- [ImageRight](https://betterview.readme.io/docs/imageright.md): Files can be dropped directly into your ImageRight installation.
+- [iframe](https://betterview.readme.io/docs/iframe.md): Add the Betterview Geospatial UI experience to your Core System
+
+## API Reference
+- [List Products](https://betterview.readme.io/reference/getproductsrequest-1.md): Get an array of product names that can be applied to orders.
+- [Search Properties](https://betterview.readme.io/reference/get_api-properties-header-search.md): Request a list of properties matching {address}
+- [Run Profile(s)](https://betterview.readme.io/reference/addprofilerequest.md): Send an array of addresses to the profile system to receive insights on the property including the RSI (Roof Spotlight Index), Peril Risks, Flags, and Partner Connect data (third party data).  **Account and Policy Management**: Properties can now include optional `policy` and `account` objects to integrate property-level insights with insurance information.
+- [Update Profile(s)](https://betterview.readme.io/reference/updateprofilerequest.md): Updates multiple addresses. This endpoint can be used to update the renewal_date of properties, and enable or disable PropertyPulse.
+- [Retrieve a list of recent orders](https://betterview.readme.io/reference/get_api-properties-recent.md): Get a list of recently generated profiles. This includes profiles generated from new orders and from scoring additional dates on existing orders. By default, the past 30 days will be pulled. The `start` and `end` query string parameters may be used to adjust the range (limited to 90 days). <br /><br /> `capture_date` in the response can be passed to `/api/properties/{id}/full` as "date" in the query string to pull details for that date.
+- [Retrieve the status of an order](https://betterview.readme.io/reference/get_api-properties-bulk-status-id.md): Retrieve the status of an order. The response includes the total number of properties in the order, how many are done, and a list of properties that are in process, or have been processed. <br /> Note: The properties array will populate as the system processes the order and may not contain all properties in the order until it has finished processing.
+- [Retrieve Profile (limited)](https://betterview.readme.io/reference/pullprofilerecord.md): Retrieves the results for a single property.  This call is not suggested.  Rather, Betterview prefers receiving a callback path in the /api/properties method and pushing final results.  This method is available as an on-demand pull.  If certain pieces of the order are not availble, they will be null (grade). <br /><br /> Note: This endpoint is provided for backwards compatibility and does not include newer features, such as flags and Partner Connect data.
+- [Update Profile](https://betterview.readme.io/reference/patchprofilerecord.md): Updates a single property. This endpoint can be used to update the renewal_date of a property, and enable or disable PropertyPulse.
+- [Retrieve Profile (full)](https://betterview.readme.io/reference/pullfullprofilerecord.md): Retrieves the complete results for a single property.  This call is not suggested.  Rather, Betterview prefers receiving a callback path in the /api/properties method and pushing final results.  This method is available as an on-demand pull.  If certain pieces of the order are not availble, they will be null (grade).
+- [Retrieve a list of graded dates](https://betterview.readme.io/reference/get_api-properties-id-dates.md): Retrieves a list of graded dates for the specified property id. These dates can be used when retrieving profile data.
+- [Retrieve Property with Coords](https://betterview.readme.io/reference/getpropertynowwithcentroid.md): Retrieves PropertyNow's pre-processed dataset results for a lat/lng.
+- [Retrieve Property with Coords](https://betterview.readme.io/reference/postpropertynowwithcentroid.md): Retrieves PropertyNow's pre-processed dataset results for a lat/lng.
+- [Retrieve Property with Address](https://betterview.readme.io/reference/postpropertynowwithaddress.md): Retrieves a limited set of information for a property, with speed in mind. Requires geocoding of the address.
+- [Retrieve Pulse Details](https://betterview.readme.io/reference/getpropertiespulse.md): Retrieves information about properties which are subscribed to PropertyPulse.
+- [Retrieve Quota Details](https://betterview.readme.io/reference/get_api-properties-quota.md): Returns the number of remaining quota credits, or 'unlimited'

@@ -1,0 +1,60 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: https://betterview.readme.io/llms.txt
+notes: >-
+  No official hosted/remote MCP server was found for Betterview. This is a
+  candidate tool list derived from the operations published in the Betterview
+  API reference (ReadMe developer portal). Operation names mirror the reference
+  ids verbatim; no OpenAPI bundle was discoverable to bind request schemas.
+server:
+  name: betterview
+  transport: http
+tools:
+- name: list_products
+  description: Get an array of product names that can be applied to orders.
+  source_operation: getproductsrequest-1
+- name: search_properties
+  description: Request a list of properties matching an address.
+  source_operation: get_api-properties-header-search
+- name: run_profiles
+  description: >-
+    Send an array of addresses to the profile system to receive property
+    insights including the Roof Spotlight Index (RSI), peril risks, flags, and
+    Partner Connect third-party data.
+  source_operation: addprofilerequest
+- name: update_profiles
+  description: >-
+    Update multiple addresses, e.g. renewal_date or enabling/disabling
+    PropertyPulse.
+  source_operation: updateprofilerequest
+- name: list_recent_orders
+  description: Get a list of recently generated profiles (default past 30 days).
+  source_operation: get_api-properties-recent
+- name: get_order_status
+  description: Retrieve the processing status of a bulk order.
+  source_operation: get_api-properties-bulk-status-id
+- name: pull_profile
+  description: Retrieve results for a single property (limited).
+  source_operation: pullprofilerecord
+- name: pull_full_profile
+  description: Retrieve the complete results for a single property.
+  source_operation: pullfullprofilerecord
+- name: update_profile
+  description: Update a single property (renewal_date, PropertyPulse toggle).
+  source_operation: patchprofilerecord
+- name: list_graded_dates
+  description: Retrieve a list of graded dates for a property id.
+  source_operation: get_api-properties-id-dates
+- name: property_now_by_centroid
+  description: Retrieve PropertyNow pre-processed dataset results for a lat/lng.
+  source_operation: getpropertynowwithcentroid
+- name: property_now_by_address
+  description: Retrieve a limited, speed-optimized dataset for a property by address.
+  source_operation: postpropertynowwithaddress
+- name: list_pulse_properties
+  description: Retrieve information about properties subscribed to PropertyPulse.
+  source_operation: getpropertiespulse
+- name: get_quota
+  description: Return remaining quota credits, or 'unlimited'.
+  source_operation: get_api-properties-quota

@@ -2,11 +2,9 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: https://betterview.readme.io/llms.txt
-notes: >-
-  No official hosted/remote MCP server was found for Betterview. This is a
-  candidate tool list derived from the operations published in the Betterview
-  API reference (ReadMe developer portal). Operation names mirror the reference
-  ids verbatim; no OpenAPI bundle was discoverable to bind request schemas.
+notes: No official hosted/remote MCP server was found for Betterview. This is a candidate tool list derived
+  from the operations published in the Betterview API reference (ReadMe developer portal). Operation names
+  mirror the reference ids verbatim; no OpenAPI bundle was discoverable to bind request schemas.
 server:
   name: betterview
   transport: http
@@ -18,15 +16,11 @@ tools:
   description: Request a list of properties matching an address.
   source_operation: get_api-properties-header-search
 - name: run_profiles
-  description: >-
-    Send an array of addresses to the profile system to receive property
-    insights including the Roof Spotlight Index (RSI), peril risks, flags, and
-    Partner Connect third-party data.
+  description: Send an array of addresses to the profile system to receive property insights including
+    the Roof Spotlight Index (RSI), peril risks, flags, and Partner Connect third-party data.
   source_operation: addprofilerequest
 - name: update_profiles
-  description: >-
-    Update multiple addresses, e.g. renewal_date or enabling/disabling
-    PropertyPulse.
+  description: Update multiple addresses, e.g. renewal_date or enabling/disabling PropertyPulse.
   source_operation: updateprofilerequest
 - name: list_recent_orders
   description: Get a list of recently generated profiles (default past 30 days).
@@ -58,3 +52,9 @@ tools:
 - name: get_quota
   description: Return remaining quota credits, or 'unlimited'.
   source_operation: get_api-properties-quota
+deployment:
+  mode: none
+  verified: derived
+  tools: 14
+  checked: '2026-08-12'
+  source: catalog MCP census

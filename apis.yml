@@ -59,6 +59,15 @@ tags:
 - Geospatial
 - Underwriting
 - Property Data
+- Risk Management
+tags_raw:
+- Company
+- Property Intelligence
+- Insurance
+- Insurtech
+- Geospatial
+- Underwriting
+- Property Data
 - Risk
 apis:
 - name: Betterview Property Intelligence API
